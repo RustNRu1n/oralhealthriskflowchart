@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oral Health Risk Assessment & Care Guide</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            },
+            tealbrand: {
+              50: '#f0fdf4',
+              500: '#10b981',
+              600: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col justify-between selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- Header / Navbar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-tealbrand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+          <i class="fa-solid fa-[# tooth] fa-tooth text-xl"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-slate-900 leading-tight text-base sm:text-lg">Oral Care Guide</h1>
+          <p class="text-xs text-slate-500">Evidence-Based CAMBRA Self-Assessment</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 text-xs text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200/60">
+        <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+        <span class="font-medium hidden sm:inline">100% Anonymous & Ephemeral</span>
+        <span class="font-medium sm:hidden">Private</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Assessment Container -->
+  <main class="max-w-3xl mx-auto px-4 py-6 sm:py-10 flex-grow w-full">
+    
+    <!-- Assessment Card -->
+    <div class="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200/80 overflow-hidden">
+      
+      <!-- Progress Bar Area -->
+      <div id="progress-container" class="bg-slate-50 border-b border-slate-100 p-4 sm:px-8">
+        <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-2">
+          <span id="step-label">Step 1 of 4: Physical Sensations</span>
+          <span id="progress-percent" class="text-brand-600">25% Complete</span>
+        </div>
+        <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-brand-500 to-tealbrand-500 h-2 rounded-full transition-all duration-300 ease-out" style="width: 25%;"></div>
+        </div>
+      </div>
+
+      <!-- Content Views Container -->
+      <div class="p-5 sm:p-8">
+
+        <!-- ================= STEP 1: Sensations ================= -->
+        <div id="step-1" class="quiz-step space-y-6">
+          <div>
+            <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md mb-2">Step 1 • Sensations</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">How does your mouth feel on a daily basis?</h2>
+            <p class="text-sm text-slate-600 mt-1">Select all symptoms or physical observations you've experienced recently.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <!-- Option 1 -->
+            <label class="choice-card group relative border-2 border-slate-200 rounded-xl p-4 cursor-pointer hover:border-brand-500 transition-all duration-150 flex items-start space-x-3.5 select-none">
+              <input type="checkbox" name="symptoms" value="sensitivity" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="flex items-center space-x-2 text-slate-900 font-semibold text-sm">
+                  <i class="fa-solid fa-snowflake text-sky-500 group-hover:scale-110 transition-transform"></i>
+                  <span>Tooth Sensitivity</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Zings of discomfort when drinking cold water, hot liquids, or eating sweets.</p>
+              </div>
+            </label>
+
+            <!-- Option 2 -->
+            <label class="choice-card group relative border-2 border-slate-200 rounded-xl p-4 cursor-pointer hover:border-brand-500 transition-all duration-150 flex items-start space-x-3.5 select-none">
+              <input type="checkbox" name="symptoms" value="dryness" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="flex items-center space-x-2 text-slate-900 font-semibold text-sm">
+                  <i class="fa-solid fa-droplet-slash text-amber-500 group-hover:scale-110 transition-transform"></i>
+                  <span>Dry or Sticky Mouth</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Waking up with a parched mouth, or feeling like you never have enough saliva.</p>
+              </div>
+            </label>
+
+            <!-- Option 3 -->
+            <label class="choice-card group relative border-2 border-slate-200 rounded-xl p-4 cursor-pointer hover:border-brand-500 transition-all duration-150 flex items-start space-x-3.5 select-none">
+              <input type="checkbox" name="symptoms" value="bleeding" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="flex items-center space-x-2 text-slate-900 font-semibold text-sm">
+                  <i class="fa-solid fa-notes-medical text-rose-500 group-hover:scale-110 transition-transform"></i>
+                  <span>Bleeding / Tender Gums</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Noticing "pink in the sink" or soreness when brushing or flossing.</p>
+              </div>
+            </label>
+
+            <!-- Option 4 -->
+            <label class="choice-card group relative border-2 border-slate-200 rounded-xl p-4 cursor-pointer hover:border-brand-500 transition-all duration-150 flex items-start space-x-3.5 select-none">
+              <input type="checkbox" name="symptoms" value="foodTrapping" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="flex items-center space-x-2 text-slate-900 font-semibold text-sm">
+                  <i class="fa-solid fa-utensils text-emerald-500 group-hover:scale-110 transition-transform"></i>
+                  <span>Food Trapping</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Food consistently gets stuck between specific back teeth after eating.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+        <!-- ================= STEP 2: History & Diet ================= -->
+        <div id="step-2" class="quiz-step hidden space-y-6">
+          <div>
+            <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md mb-2">Step 2 • History & Lifestyle</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Your Recent Dental History & Habits</h2>
+            <p class="text-sm text-slate-600 mt-1">Help us balance your disease indicators against your daily routines.</p>
+          </div>
+
+          <div class="space-y-5">
+            <!-- Cavity History -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-900 mb-2">
+                Have you needed a new filling, crown, or cavity repair in the past 2 years?
+              </label>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all text-center select-none">
+                  <input type="radio" name="cavities" value="0" class="sr-only" checked>
+                  <span class="text-xs font-semibold text-slate-700 block">No cavities</span>
+                  <span class="text-[10px] text-slate-500">Clean checkups</span>
+                </label>
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all text-center select-none">
+                  <input type="radio" name="cavities" value="1" class="sr-only">
+                  <span class="text-xs font-semibold text-slate-700 block">1 Cavity</span>
+                  <span class="text-[10px] text-slate-500">Minor repair</span>
+                </label>
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all text-center select-none">
+                  <input type="radio" name="cavities" value="2+" class="sr-only">
+                  <span class="text-xs font-semibold text-slate-700 block">2 or More</span>
+                  <span class="text-[10px] text-slate-500">Frequent repairs</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Acid/Sugar Exposure -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-900 mb-2">
+                Do you regularly sip on coffee, soda, tea, juice, or flavored water between meals?
+              </label>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all select-none flex items-center space-x-3">
+                  <input type="radio" name="sipping" value="low" class="sr-only" checked>
+                  <i class="fa-solid fa-glass-water text-brand-500 text-lg"></i>
+                  <div>
+                    <span class="text-xs font-semibold text-slate-800 block">Rarely / Mainly Water</span>
+                    <span class="text-[10px] text-slate-500">Finish beverages during meal times</span>
+                  </div>
+                </label>
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all select-none flex items-center space-x-3">
+                  <input type="radio" name="sipping" value="high" class="sr-only">
+                  <i class="fa-solid fa-mug-hot text-amber-600 text-lg"></i>
+                  <div>
+                    <span class="text-xs font-semibold text-slate-800 block">Frequently Sip Throughout Day</span>
+                    <span class="text-[10px] text-slate-500">Sip coffee, tea, or soda over hours</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Medication / Dry Mouth Trigger -->
+            <label class="choice-card group relative border-2 border-slate-200 rounded-xl p-4 cursor-pointer hover:border-brand-500 transition-all duration-150 flex items-start space-x-3.5 select-none">
+              <input type="checkbox" name="medications" value="dryMouthMeds" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="text-slate-900 font-semibold text-sm">Daily Prescription Medications</div>
+                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">I take daily medications known to reduce saliva flow (e.g., blood pressure, allergy, or mood medications).</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+        <!-- ================= STEP 3: Protective Routine ================= -->
+        <div id="step-3" class="quiz-step hidden space-y-6">
+          <div>
+            <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md mb-2">Step 3 • Daily Routine</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">What tools and products do you currently use?</h2>
+            <p class="text-sm text-slate-600 mt-1">These protective factors help shield enamel and promote oral mineral recovery.</p>
+          </div>
+
+          <div class="space-y-5">
+            <!-- Brush Type -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-900 mb-2">Toothbrush Type:</label>
+              <div class="grid grid-cols-2 gap-3">
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all select-none text-center">
+                  <input type="radio" name="brushType" value="electric" class="sr-only" checked>
+                  <i class="fa-solid fa-plug-zap text-brand-500 text-lg mb-1 block"></i>
+                  <span class="text-xs font-semibold text-slate-800 block">Electric / Sonic</span>
+                </label>
+                <label class="radio-card border-2 border-slate-200 rounded-xl p-3.5 cursor-pointer hover:border-brand-500 transition-all select-none text-center">
+                  <input type="radio" name="brushType" value="manual" class="sr-only">
+                  <i class="fa-solid fa-hand text-slate-400 text-lg mb-1 block"></i>
+                  <span class="text-xs font-semibold text-slate-800 block">Standard Manual</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Interdental Cleaning -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-900 mb-2">Cleaning Between Teeth (Interdental):</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                  <input type="checkbox" name="interdental" value="floss" class="w-4 h-4 text-brand-600 rounded">
+                  <span class="text-xs font-medium text-slate-700">String Floss / Floss Picks</span>
+                </label>
+                <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                  <input type="checkbox" name="interdental" value="waterFlosser" class="w-4 h-4 text-brand-600 rounded">
+                  <span class="text-xs font-medium text-slate-700">Water Flosser</span>
+                </label>
+                <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                  <input type="checkbox" name="interdental" value="interdentalBrushes" class="w-4 h-4 text-brand-600 rounded">
+                  <span class="text-xs font-medium text-slate-700">Interdental Micro-Brushes</span>
+                </label>
+                <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                  <input type="checkbox" name="interdental" value="none" class="w-4 h-4 text-brand-600 rounded">
+                  <span class="text-xs font-medium text-slate-700">None / Rarely Clean Between</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Mineral Exposure -->
+            <div class="space-y-2">
+              <label class="block text-sm font-semibold text-slate-900">Protective Mineral Exposure (Select all that apply):</label>
+
+              <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                <input type="checkbox" name="protective" value="fluoridePaste" class="w-4 h-4 text-brand-600 rounded" checked>
+                <span class="text-xs font-medium text-slate-700">Fluoride or Hydroxyapatite Toothpaste Twice Daily</span>
+              </label>
+
+              <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                <input type="checkbox" name="protective" value="xylitol" class="w-4 h-4 text-brand-600 rounded">
+                <span class="text-xs font-medium text-slate-700">Xylitol Lozenges / Mints or pH-Balancing Rinses</span>
+              </label>
+
+              <label class="choice-card border-2 border-slate-200 rounded-xl p-3 cursor-pointer hover:border-brand-500 transition-all flex items-center space-x-3 select-none">
+                <input type="checkbox" name="protective" value="tapWater" class="w-4 h-4 text-brand-600 rounded">
+                <span class="text-xs font-medium text-slate-700">Drink Fluoridated Tap Water Regularly</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ================= STEP 4: Results & Ephemeral Delivery ================= -->
+        <div id="step-4" class="quiz-step hidden space-y-6">
+          
+          <!-- Summary Header -->
+          <div class="border-b border-slate-200 pb-5">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-tealbrand-600 bg-tealbrand-50 px-2.5 py-1 rounded-md">CAMBRA Analysis Complete</span>
+              <span id="risk-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-200">Moderate Risk Tier</span>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-900">Your Customized Oral Care Protocol</h2>
+            <p class="text-sm text-slate-600 mt-1">Based on your symptom inputs, daily habits, and protective mineral balance.</p>
+          </div>
+
+          <!-- Calculated Findings Grid -->
+          <div id="results-content" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Behavioral Habits Column -->
+            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 space-y-3">
+              <div class="flex items-center space-x-2 text-brand-700 font-bold text-sm border-b border-slate-200 pb-2">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Recommended Habits</span>
+              </div>
+              <ul id="behavior-list" class="space-y-2.5 text-xs text-slate-700">
+                <!-- Injected via JS -->
+              </ul>
+            </div>
+
+            <!-- Target Interventions Column -->
+            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 space-y-3">
+              <div class="flex items-center space-x-2 text-tealbrand-600 font-bold text-sm border-b border-slate-200 pb-2">
+                <i class="fa-solid fa-pump-medical"></i>
+                <span>Targeted Product Categories</span>
+              </div>
+              <ul id="product-list" class="space-y-2.5 text-xs text-slate-700">
+                <!-- Injected via JS -->
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Ephemeral Email Box -->
+          <div class="bg-gradient-to-br from-brand-50 to-slate-50 border-2 border-brand-200/80 rounded-2xl p-5 sm:p-6 space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-regular fa-paper-plane text-sm"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-base">Receive Your Report via Ephemeral Email</h3>
+                <p class="text-xs text-slate-600 mt-0.5">Enter your email address to receive a one-time copy of this care guide. To protect your health privacy, your email address is compiled in-memory, delivered immediately, and **never saved to a database**.</p>
+              </div>
+            </div>
+
+            <!-- Email Form -->
+            <form id="email-form" onsubmit="handleEmailSubmit(event)" class="space-y-3">
+              <div>
+                <input type="email" id="patient-email" required placeholder="patient@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+              </div>
+
+              <!-- Consent Checkbox -->
+              <label class="flex items-start space-x-2.5 cursor-pointer select-none">
+                <input type="checkbox" id="privacy-consent" required class="mt-0.5 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+                <span class="text-[11px] text-slate-600 leading-snug">
+                  I consent to receiving a one-time email with my results. I acknowledge that standard unencrypted email carries inherent security risks, and that my email address will be deleted immediately after delivery without being stored.
+                </span>
+              </label>
+
+              <!-- Submit Button -->
+              <button type="submit" id="send-btn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2 text-sm">
+                <span>Send My Anonymous Summary</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </form>
+
+            <!-- Success Box (Hidden initially) -->
+            <div id="email-success" class="hidden bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-emerald-800 text-xs space-y-1">
+              <div class="font-bold flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
+                <span>Report Delivered & Memory Flushed!</span>
+              </div>
+              <p class="text-slate-600">Your personalized summary has been compiled in-memory and dispatched to your inbox. The backend execution wiped your email address from server memory.</p>
+            </div>
+          </div>
+
+          <!-- Medical Disclaimer -->
+          <p class="text-[10px] text-slate-400 text-center leading-relaxed">
+            <strong>Educational Disclaimer:</strong> This tool utilizes non-clinical screening based on CAMBRA (Caries Risk Assessment) guidelines. It provides general educational insights and OTC hygiene product suggestions and does NOT constitute formal clinical teledentistry, medical advice, or diagnosis.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Navigation Footer (For Steps 1-3) -->
+      <div id="quiz-nav" class="bg-slate-50 border-t border-slate-100 p-4 sm:px-8 flex justify-between items-center">
+        <button id="prev-btn" onclick="navigateStep(-1)" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center space-x-1.5" disabled>
+          <i class="fa-solid fa-chevron-left text-[10px]"></i>
+          <span>Back</span>
+        </button>
+
+        <button id="next-btn" onclick="navigateStep(1)" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl text-xs font-semibold transition-colors shadow-sm flex items-center space-x-1.5">
+          <span>Continue</span>
+          <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ================= ANONYMOUS TELEMETRY INSPECTOR ================= -->
+    <div class="mt-8 bg-slate-900 text-slate-100 rounded-2xl p-5 shadow-xl border border-slate-800">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+        <div class="flex items-center space-x-2">
+          <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+          <h3 class="font-mono text-xs font-bold text-slate-200 uppercase tracking-wider">Decoupled Telemetry Console (Stream B)</h3>
+        </div>
+        <span class="text-[10px] text-slate-400 font-mono">No PII / No IP Address</span>
+      </div>
+
+      <p class="text-xs text-slate-400 mb-3 leading-relaxed">
+        This log shows what data is written to your analytics database (Supabase) upon submission. Notice that <span class="text-amber-400 font-semibold">zero personal identifiers</span> (email, IP address, device fingerprints) are linked to the choices.
+      </p>
+
+      <!-- JSON Telemetry Output -->
+      <pre id="telemetry-log" class="bg-slate-950 p-3.5 rounded-xl font-mono text-[11px] text-emerald-400 overflow-x-auto border border-slate-800/80 custom-scrollbar">
+{
+  "status": "Awaiting quiz completion...",
+  "anonymizedSessionId": "anon_session_waiting",
+  "dataPointsCaptured": 0
+}
+      </pre>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div>&copy; 2026 Ephemeral Oral Care Guide • Privacy-First Infrastructure</div>
+      <div class="flex space-x-4 text-slate-400">
+        <span class="hover:text-slate-600">CAMBRA Framework</span>
+        <span>•</span>
+        <span class="hover:text-slate-600">HIPAA Compliant Ephemeral Flow</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic JS -->
+  <script>
+    // State Container
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    const quizState = {
+      symptoms: [],
+      cavityHistory: "0",
+      sippingHabit: "low",
+      dryMouthMeds: false,
+      brushType: "electric",
+      interdentalTools: [],
+      protectiveFactors: ["fluoridePaste"],
+      calculatedScore: 0,
+      riskTier: "Low"
+    };
+
+    // Card Selection Styling Sync
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCardStyles();
+      
+      // Add event listener to input elements to dynamically refresh styles
+      document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('change', () => {
+          syncStateFromInputs();
+          updateCardStyles();
+          updateTelemetryLog();
+        });
+      });
+
+      updateTelemetryLog();
+    });
+
+    function updateCardStyles() {
+      // Checkboxes & Radios visual feedback
+      document.querySelectorAll('.choice-card, .radio-card').forEach(card => {
+        const input = card.querySelector('input');
+        if (input && input.checked) {
+          card.classList.add('border-brand-500', 'bg-brand-50/40', 'shadow-sm');
+          card.classList.remove('border-slate-200');
+        } else if (card) {
+          card.classList.remove('border-brand-500', 'bg-brand-50/40', 'shadow-sm');
+          card.classList.add('border-slate-200');
+        }
+      });
+    }
+
+    function syncStateFromInputs() {
+      // Step 1: Symptoms
+      quizState.symptoms = Array.from(document.querySelectorAll('input[name="symptoms"]:checked')).map(el => el.value);
+
+      // Step 2: History
+      const cavityEl = document.querySelector('input[name="cavities"]:checked');
+      if (cavityEl) quizState.cavityHistory = cavityEl.value;
+
+      const sippingEl = document.querySelector('input[name="sipping"]:checked');
+      if (sippingEl) quizState.sippingHabit = sippingEl.value;
+
+      quizState.dryMouthMeds = document.querySelector('input[name="medications"]').checked;
+
+      // Step 3: Routine
+      const brushEl = document.querySelector('input[name="brushType"]:checked');
+      if (brushEl) quizState.brushType = brushEl.value;
+
+      quizState.interdentalTools = Array.from(document.querySelectorAll('input[name="interdental"]:checked')).map(el => el.value);
+      quizState.protectiveFactors = Array.from(document.querySelectorAll('input[name="protective"]:checked')).map(el => el.value);
+    }
+
+    function navigateStep(direction) {
+      syncStateFromInputs();
+
+      // Hide current step
+      document.getElementById(`step-${currentStep}`).classList.add('hidden');
+
+      currentStep += direction;
+
+      // Clamp steps
+      if (currentStep < 1) currentStep = 1;
+      if (currentStep > totalSteps) currentStep = totalSteps;
+
+      // Show new step
+      document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+      // Update Header & Progress Bar
+      updateProgressUI();
+
+      // If entering Step 4, compute CAMBRA score
+      if (currentStep === 4) {
+        calculateCAMBRARisk();
+        document.getElementById('quiz-nav').classList.add('hidden');
+      } else {
+        document.getElementById('quiz-nav').classList.remove('hidden');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      updateTelemetryLog();
+    }
+
+    function updateProgressUI() {
+      const percent = Math.round((currentStep / totalSteps) * 100);
+      document.getElementById('progress-bar').style.width = `${percent}%`;
+      document.getElementById('progress-percent').innerText = `${percent}% Complete`;
+
+      const stepTitles = [
+        "Step 1 of 4: Physical Sensations",
+        "Step 2 of 4: History & Lifestyle",
+        "Step 3 of 4: Daily Routine & Products",
+        "Step 4 of 4: Your Customized Protocol"
+      ];
+      document.getElementById('step-label').innerText = stepTitles[currentStep - 1];
+
+      // Enable/Disable Back Button
+      document.getElementById('prev-btn').disabled = (currentStep === 1);
+    }
+
+    // CAMBRA Risk Calculation Engine
+    function calculateCAMBRARisk() {
+      let riskScore = 0;
+
+      // Disease Indicators & Symptoms (+)
+      if (quizState.symptoms.includes('sensitivity')) riskScore += 2;
+      if (quizState.symptoms.includes('dryness')) riskScore += 3;
+      if (quizState.symptoms.includes('bleeding')) riskScore += 2;
+      if (quizState.symptoms.includes('foodTrapping')) riskScore += 1;
+
+      // Cavity History (+)
+      if (quizState.cavityHistory === '1') riskScore += 3;
+      if (quizState.cavityHistory === '2+') riskScore += 6;
+
+      // Lifestyle Risk Factors (+)
+      if (quizState.sippingHabit === 'high') riskScore += 2;
+      if (quizState.dryMouthMeds) riskScore += 3;
+
+      // Protective Factors (-)
+      if (quizState.brushType === 'electric') riskScore -= 1;
+      if (quizState.protectiveFactors.includes('fluoridePaste')) riskScore -= 2;
+      if (quizState.protectiveFactors.includes('xylitol')) riskScore -= 2;
+      if (quizState.protectiveFactors.includes('tapWater')) riskScore -= 1;
+      if (quizState.interdentalTools.length > 0 && !quizState.interdentalTools.includes('none')) riskScore -= 2;
+
+      quizState.calculatedScore = riskScore;
+
+      // Assign Tier
+      let tier = "Low";
+      let badgeStyle = "bg-emerald-100 text-emerald-800 border-emerald-200";
+
+      if (riskScore >= 3 && riskScore < 6) {
+        tier = "Moderate";
+        badgeStyle = "bg-amber-100 text-amber-800 border-amber-200";
+      } else if (riskScore >= 6 && riskScore < 9) {
+        tier = "High";
+        badgeStyle = "bg-orange-100 text-orange-800 border-orange-200";
+      } else if (riskScore >= 9) {
+        tier = "Extreme (High Risk + Dry Mouth)";
+        badgeStyle = "bg-rose-100 text-rose-800 border-rose-200";
+      }
+
+      quizState.riskTier = tier;
+
+      // Update UI Badge
+      const badgeEl = document.getElementById('risk-badge');
+      badgeEl.innerText = `${tier} Risk Tier`;
+      badgeEl.className = `px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${badgeStyle}`;
+
+      // Populate Recommendations
+      generateRecommendations();
+      updateTelemetryLog();
+    }
+
+    function generateRecommendations() {
+      const behaviorList = document.getElementById('behavior-list');
+      const productList = document.getElementById('product-list');
+
+      behaviorList.innerHTML = '';
+      productList.innerHTML = '';
+
+      const behaviors = [];
+      const products = [];
+
+      // Dynamic rules matching CAMBRA logic
+      if (quizState.symptoms.includes('dryness') || quizState.dryMouthMeds) {
+        behaviors.push("<strong>Nocturnal Oral Hydration Protocol:</strong> Sip water before bed and avoid mouth-breathing triggers.");
+        products.push("<strong>Saliva-Stimulating Xylitol Lozenges:</strong> Slow-release mints for night use to promote neutral pH.");
+        products.push("<strong>High-pH Mineral Rinse:</strong> Alcohol-free oral rinse to buffer acidic saliva drops.");
+      }
+
+      if (quizState.symptoms.includes('bleeding') || quizState.interdentalTools.includes('none')) {
+        behaviors.push("<strong>Modified Bass Brushing:</strong> Angle bristles at 45 degrees towards gumline in soft circular motions.");
+        behaviors.push("<strong>Daily Interdental Disruption:</strong> Clean between teeth before nightly brushing to allow paste access.");
+        products.push("<strong>Soft Sonic Brush Heads:</strong> High-frequency micro-sweeps to remove sticky biofilm along the gumline.");
+      }
+
+      if (quizState.cavityHistory !== '0' || quizState.sippingHabit === 'high') {
+        behaviors.push("<strong>Beverage Neutralization:</strong> Rinse with plain tap water immediately after sipping acidic coffee or tea.");
+        products.push("<strong>Nano-Hydroxyapatite (nHAp) / 5000 ppm Paste:</strong> Enamel-rebuilding paste to promote mineral redeposition.");
+      }
+
+      // Default baselines
+      if (behaviors.length === 0) {
+        behaviors.push("<strong>Maintenance Routine:</strong> Brush twice daily for 2 minutes and clean interdental spaces daily.");
+      }
+      if (products.length === 0) {
+        products.push("<strong>Standard Fluoride or Hydroxyapatite Paste:</strong> Maintain daily mineral protection.");
+      }
+
+      // Render items
+      behaviors.forEach(b => {
+        const li = document.createElement('li');
+        li.className = "flex items-start space-x-2";
+        li.innerHTML = `<i class="fa-solid fa-check text-brand-600 mt-0.5 text-xs"></i><span>${b}</span>`;
+        behaviorList.appendChild(li);
+      });
+
+      products.forEach(p => {
+        const li = document.createElement('li');
+        li.className = "flex items-start space-x-2";
+        li.innerHTML = `<i class="fa-solid fa-cart-shopping text-tealbrand-600 mt-0.5 text-xs"></i><span>${p}</span>`;
+        productList.appendChild(li);
+      });
+    }
+
+    // Ephemeral Email Dispatch Simulation
+    function handleEmailSubmit(e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('send-btn');
+      const emailInput = document.getElementById('patient-email');
+
+      // UI Loading state
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>Compiling In-Memory Report...</span>`;
+
+      setTimeout(() => {
+        // Hide form, show success message
+        document.getElementById('email-form').classList.add('hidden');
+        document.getElementById('email-success').classList.remove('hidden');
+
+        // Update telemetry inspector with submission event
+        updateTelemetryLog(true);
+      }, 1200);
+    }
+
+    // Telemetry Console Updating (Stream B Simulation)
+    function updateTelemetryLog(submitted = false) {
+      const logEl = document.getElementById('telemetry-log');
+
+      // Generate random anonymous session token
+      const sessionHash = "anon_usr_" + Math.random().toString(36).substring(2, 10);
+
+      const telemetryPayload = {
+        event: submitted ? "QUIZ_SUBMITTED_EMAIL_FLUSHED" : "QUIZ_STATE_IN_PROGRESS",
+        anonymizedSessionId: sessionHash,
+        timestamp: new Date().toISOString(),
+        networkDataStripped: {
+          ipAddress: "[STRIPPED_EXPLICITLY]",
+          userEmail: "[PURGED_FROM_MEMORY]",
+          cookies: "none"
+        },
+        decoupledResponses: {
+          symptomsCaptured: quizState.symptoms,
+          cavityHistoryTier: quizState.cavityHistory,
+          sippingHabit: quizState.sippingHabit,
+          takesDryMouthMeds: quizState.dryMouthMeds,
+          brushType: quizState.brushType,
+          interdentalCount: quizState.interdentalTools.length,
+          cambraScore: quizState.calculatedScore,
+          computedRiskTier: quizState.riskTier
+        }
+      };
+
+      logEl.innerText = JSON.stringify(telemetryPayload, null, 2);
+    }
+  </script>
+</body>
+</html>
